@@ -177,6 +177,69 @@
       font-size: 17px;
       font-style: italic;
     }
+        /* PROCESS */
+
+    .process {
+      background: #ffffff;
+      color: #111111;
+      padding: 110px 30px;
+    }
+
+    .process-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .process h2 {
+      max-width: 850px;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 70px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .process-step {
+      border-top: 1px solid #d9d9d9;
+      padding-top: 28px;
+    }
+
+    .step-number {
+      display: block;
+      color: #a97816;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .process-step h3 {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .process-step p {
+      color: #555555;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .process-closing {
+      margin-top: 80px;
+      padding-top: 35px;
+      border-top: 1px solid #d9d9d9;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+    }
     /* MOBILE */
 
     @media (max-width: 700px) {
@@ -208,6 +271,24 @@
 
       .hero p {
         font-size: 17px;
+      }
+      .process {
+        padding: 80px 24px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .process h2 {
+        font-size: 40px;
+        margin-bottom: 50px;
+      }
+
+      .process-closing {
+        margin-top: 60px;
+        font-size: 30px;
       }
     }
   </style>
@@ -329,3 +410,54 @@
 
 </body>
 </html>
+<section class="process" id="about">
+
+  <div class="process-container">
+
+    <div class="section-label">
+      HOW I WORK WITH YOU
+    </div>
+
+    <h2>
+      No complicated process. Just figuring out what your business actually needs.
+    </h2>
+
+    <div class="process-grid">
+
+      <div class="process-step">
+        <span class="step-number">01</span>
+        <h3>We talk about your business</h3>
+        <p>
+          I want to understand what feels messy, what takes too much time,
+          what gets missed, and what you wish worked better.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <span class="step-number">02</span>
+        <h3>We find a solution that makes sense</h3>
+        <p>
+          No selling you things you do not need. We figure out what would
+          actually make running your business easier.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <span class="step-number">03</span>
+        <h3>Then we build it</h3>
+        <p>
+          Whether that is a website, CRM, booking system, follow-up process,
+          automation, or a combination, the goal is to create something useful
+          and easy to manage.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="process-closing">
+      Less busywork. More time to actually run your business.
+    </div>
+
+  </div>
+
+</section>
