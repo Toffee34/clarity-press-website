@@ -107,12 +107,94 @@
     .button:hover {
       background: #a97816;
     }
+    /* SERVICES */
 
+    .services {
+      background: #111111;
+      color: #ffffff;
+      padding: 110px 30px;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #b8872c;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .services h2 {
+      max-width: 800px;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .services-intro {
+      max-width: 700px;
+      color: #cfcfcf;
+      font-size: 18px;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #333333;
+      border: 1px solid #333333;
+    }
+
+    .service-card {
+      background: #111111;
+      padding: 40px 30px;
+      min-height: 220px;
+    }
+
+    .service-card h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      color: #bfbfbf;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .services-note {
+      margin-top: 50px;
+      color: #b8872c;
+      font-size: 17px;
+      font-style: italic;
+    }
     /* MOBILE */
 
     @media (max-width: 700px) {
-      .nav-links {
-        display: none;
+            .services {
+        padding: 80px 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 32px 24px;
+      }
+
+      .services h2 {
+        font-size: 40px;
       }
 
       .hero {
@@ -160,10 +242,10 @@
         </h1>
 
         <p>
-          We help businesses simplify the way they work through better
-          websites, lead management, customer follow-up, CRM organization,
-          booking systems, automation, and practical business solutions.
-        </p>
+            We help businesses simplify the way they work with professional
+  websites, lead management, customer follow-up, CRM organization,
+  booking systems, automation, and practical business solutions.
+</p>
 
         <a class="button" href="#contact">
           LET'S TALK
@@ -172,7 +254,77 @@
       </div>
 
     </section>
+<section class="services" id="services">
 
+  <div class="services-container">
+
+    <div class="section-label">
+      WHAT WE DO
+    </div>
+
+    <h2>
+      Solutions built around the way your business works.
+    </h2>
+
+    <p class="services-intro">
+      We help businesses create simpler, more connected ways to attract
+      customers, manage leads, stay organized, and follow up.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Website Design &amp; Development</h3>
+        <p>
+          Professional websites built to turn visitors into opportunities.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Lead Capture Systems</h3>
+        <p>
+          Simple ways to collect, organize, and respond to new leads.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>CRM Setup &amp; Organization</h3>
+        <p>
+          Keep leads, customers, conversations, and opportunities organized.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Customer Follow-Up</h3>
+        <p>
+          Create consistent follow-up so potential customers don't get forgotten.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Booking &amp; Automation</h3>
+        <p>
+          Simplify scheduling and repetitive tasks that take up your time.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Business Consulting</h3>
+        <p>
+          Practical guidance to identify what's slowing your business down
+          and what systems could improve it.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="services-note">
+      Not sure what you need? That's okay. We'll figure it out together.
+    </p>
+
+  </div>
+
+</section>
   </main>
 
 </body>
