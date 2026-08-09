@@ -471,6 +471,148 @@
       font-style: italic;
     }
 
+    /* ===== FLIP CARDS ===== */
+
+    .flip-card {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      text-align: left;
+      cursor: pointer;
+      perspective: 1600px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
+      transition: transform 0.6s cubic-bezier(.2, .7, .2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 30px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(220, 204, 167, 0.5);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transition: box-shadow 0.4s ease;
+    }
+
+    .flip-front {
+      background: #ffffff;
+    }
+
+    .flip-front::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--grad-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .flip-card:hover .flip-front,
+    .flip-card:focus-visible .flip-front {
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .flip-card:hover .flip-front::before,
+    .flip-card:focus-visible .flip-front::before {
+      transform: scaleX(1);
+    }
+
+    .flip-card:hover .icon-chip {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    .flip-back {
+      background: linear-gradient(150deg, #1c1c22 0%, #0d0d0f 100%);
+      border-color: rgba(220, 204, 167, 0.25);
+      transform: rotateY(180deg);
+    }
+
+    .flip-back::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -70px;
+      top: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(181, 138, 50, 0.35), transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .stat-figure {
+      font-family: Georgia, serif;
+      font-size: 52px;
+      line-height: 1;
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .flip-back h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .flip-back p {
+      color: #d8d6cf;
+      font-size: 15.5px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .flip-cue {
+      margin-top: auto;
+      padding-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gold-deep);
+    }
+
+    .flip-back .flip-cue {
+      color: var(--gold-light);
+      position: relative;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flip-inner { transition: none; }
+    }
+
     /* ===== PROCESS ===== */
 
     .process {
@@ -988,95 +1130,142 @@
 
         <div class="services-grid stagger">
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="6" y="9" width="30" height="24" rx="2.5"/>
-                <line x1="6" y1="16" x2="36" y2="16"/>
-                <circle cx="10" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
-                <circle cx="13.5" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
-                <path d="M15 22 l-3 3 l3 3"/>
-                <path d="M27 22 l3 3 l-3 3"/>
-              </svg>
-            </span>
-            <h3>Website Design &amp; Development</h3>
-            <p>
-              Professional websites built to turn visitors into opportunities.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="6" y="9" width="30" height="24" rx="2.5"/>
+                    <line x1="6" y1="16" x2="36" y2="16"/>
+                    <circle cx="10" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
+                    <circle cx="13.5" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
+                    <path d="M15 22 l-3 3 l3 3"/>
+                    <path d="M27 22 l3 3 l-3 3"/>
+                  </svg>
+                </span>
+                <h3>Website Design &amp; Development</h3>
+                <p>Professional websites built to turn visitors into opportunities.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Trust</span>
+                <p>A polished, professional site builds instant credibility &mdash; visitors decide whether to trust you in seconds, before they read a single word.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M8 9 H34 L25 21 V32 L17 27 V21 Z"/>
-              </svg>
-            </span>
-            <h3>Lead Capture Systems</h3>
-            <p>
-              Simple ways to collect, organize, and respond to new leads.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M8 9 H34 L25 21 V32 L17 27 V21 Z"/>
+                  </svg>
+                </span>
+                <h3>Lead Capture Systems</h3>
+                <p>Simple ways to collect, organize, and respond to new leads.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Speed</span>
+                <p>The faster you respond, the more leads you win. Capture systems make sure every inquiry is caught and answered quickly &mdash; not lost in an inbox.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="16" cy="15" r="4.5"/>
-                <path d="M8.5 31 c0 -5 3.5 -7.5 7.5 -7.5 s7.5 2.5 7.5 7.5"/>
-                <circle cx="29" cy="17" r="3.5"/>
-                <path d="M26 31 c0 -4 1.5 -7 6 -7 s5 3 5 6"/>
-              </svg>
-            </span>
-            <h3>CRM Setup &amp; Organization</h3>
-            <p>
-              Keep leads, customers, conversations, and opportunities organized.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="16" cy="15" r="4.5"/>
+                    <path d="M8.5 31 c0 -5 3.5 -7.5 7.5 -7.5 s7.5 2.5 7.5 7.5"/>
+                    <circle cx="29" cy="17" r="3.5"/>
+                    <path d="M26 31 c0 -4 1.5 -7 6 -7 s5 3 5 6"/>
+                  </svg>
+                </span>
+                <h3>CRM Setup &amp; Organization</h3>
+                <p>Keep leads, customers, conversations, and opportunities organized.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Clarity</span>
+                <p>See every customer, conversation, and opportunity in one place &mdash; so nothing slips through the cracks and follow-through becomes effortless.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M8 11 h26 a2 2 0 0 1 2 2 v13 a2 2 0 0 1 -2 2 H19 l-6 5 v-5 H8 a2 2 0 0 1 -2 -2 V13 a2 2 0 0 1 2 -2 z"/>
-                <circle cx="15" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
-                <circle cx="21" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
-                <circle cx="27" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
-              </svg>
-            </span>
-            <h3>Customer Follow-Up</h3>
-            <p>
-              Create consistent follow-up so potential customers don't get forgotten.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M8 11 h26 a2 2 0 0 1 2 2 v13 a2 2 0 0 1 -2 2 H19 l-6 5 v-5 H8 a2 2 0 0 1 -2 -2 V13 a2 2 0 0 1 2 -2 z"/>
+                    <circle cx="15" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+                    <circle cx="21" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+                    <circle cx="27" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+                  </svg>
+                </span>
+                <h3>Customer Follow-Up</h3>
+                <p>Create consistent follow-up so potential customers don't get forgotten.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Persistence</span>
+                <p>Most sales are lost to silence, not rejection. Steady, timely follow-up keeps you top of mind and turns maybes into yeses.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="7" y="10" width="28" height="25" rx="2.5"/>
-                <line x1="7" y1="17" x2="35" y2="17"/>
-                <line x1="14" y1="7" x2="14" y2="13"/>
-                <line x1="28" y1="7" x2="28" y2="13"/>
-                <path d="M15 25 l4 4 l8 -8"/>
-              </svg>
-            </span>
-            <h3>Booking &amp; Automation</h3>
-            <p>
-              Simplify scheduling and repetitive tasks that take up your time.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="7" y="10" width="28" height="25" rx="2.5"/>
+                    <line x1="7" y1="17" x2="35" y2="17"/>
+                    <line x1="14" y1="7" x2="14" y2="13"/>
+                    <line x1="28" y1="7" x2="28" y2="13"/>
+                    <path d="M15 25 l4 4 l8 -8"/>
+                  </svg>
+                </span>
+                <h3>Booking &amp; Automation</h3>
+                <p>Simplify scheduling and repetitive tasks that take up your time.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Time back</span>
+                <p>Let customers book themselves and let routine tasks run on autopilot &mdash; reclaiming hours every week and cutting down on no-shows.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <span class="icon-chip">
-              <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 7 a10 10 0 0 1 6 18 c-1 0.8 -1.5 1.8 -1.5 3 h-9 c0 -1.2 -0.5 -2.2 -1.5 -3 a10 10 0 0 1 6 -18 z"/>
-                <line x1="16.5" y1="32" x2="25.5" y2="32"/>
-                <line x1="18" y1="35.5" x2="24" y2="35.5"/>
-              </svg>
-            </span>
-            <h3>Business Consulting</h3>
-            <p>
-              Practical guidance to identify what's slowing your business down
-              and what systems could improve it.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 7 a10 10 0 0 1 6 18 c-1 0.8 -1.5 1.8 -1.5 3 h-9 c0 -1.2 -0.5 -2.2 -1.5 -3 a10 10 0 0 1 6 -18 z"/>
+                    <line x1="16.5" y1="32" x2="25.5" y2="32"/>
+                    <line x1="18" y1="35.5" x2="24" y2="35.5"/>
+                  </svg>
+                </span>
+                <h3>Business Consulting</h3>
+                <p>Practical guidance to identify what's slowing your business down and what systems could improve it.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Fresh eyes</span>
+                <p>An outside perspective spots the bottlenecks you're too close to see &mdash; and turns them into a clear, practical plan you can act on.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
         </div>
 
@@ -1275,6 +1464,15 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
       items.forEach(function (el) { io.observe(el); });
+
+      // Flip cards
+      var cards = document.querySelectorAll('.flip-card');
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var flipped = card.classList.toggle('flipped');
+          card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+        });
+      });
     })();
   </script>
 
