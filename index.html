@@ -5,681 +5,304 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Clarity Press Solutions | Business Systems & Solutions</title>
+  <meta name="description" content="Clarity Press Solutions helps small businesses grow with professional websites, lead capture, CRM setup, customer follow-up, booking, automation, and consulting.">
 
-  <meta name="description" content="Clarity Press Solutions helps businesses build better systems through websites, lead capture, CRM organization, customer follow-up, booking systems, automation, and consulting.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clarity Press Solutions | Business Systems & Solutions">
+  <meta property="og:description" content="We help small businesses build better systems — websites, lead capture, CRM, automation, and consulting.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0d0f'/><text x='16' y='23' font-family='Georgia' font-size='20' fill='%23E8C878' text-anchor='middle'>C</text></svg>">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #FFFCF7;
-      color: #181818;
-      line-height: 1.6;
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 32px 30px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .brand-text {
-      font-family: Georgia, serif;
-      font-size: 48px;
-      letter-spacing: 5px;
-      font-weight: normal;
-      white-space: nowrap;
-    }
-
-    .flourish {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .flourish-bottom {
-      transform: rotate(180deg);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: #181818;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: 500;
-      padding: 12px 24px;
-      border: 1px solid #DCCCA7;
-      border-radius: 6px;
-      transition: 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-      background: #B58A32;
-      border-color: #B58A32;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 30px 80px;
-    }
-
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .eyebrow {
-      color: #a97816;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(48px, 7vw, 82px);
-      font-weight: normal;
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      font-size: 19px;
-      color: #555555;
-      margin-bottom: 35px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #111111;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 16px 28px;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: 0.3s ease;
-    }
-
-    .button:hover {
-      background: #a97816;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: #F7F3EA;
-      color: #181818;
-      padding: 110px 30px;
-    }
-
-    .services-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-label {
-      color: #b8872c;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    .services h2 {
-      max-width: 800px;
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 5vw, 60px);
-      font-weight: normal;
-      line-height: 1.1;
-      margin-bottom: 25px;
-    }
-
-    .services-intro {
-      max-width: 700px;
-      color: #625E57;
-      font-size: 18px;
-      margin-bottom: 60px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: #DCCCA7;
-      border: 1px solid #DCCCA7;
-    }
-
-    .service-card {
-      background: #FFFCF7;
-      padding: 40px 30px;
-      min-height: 220px;
-      transition: 0.3s ease;
-    }
-
-    .service-card:hover {
-      background: #F1E8D5;
-    }
-
-    .service-card h3 {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      font-weight: normal;
-      margin-bottom: 18px;
-    }
-
-    .service-card p {
-      color: #625E57;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .services-note {
-      margin-top: 50px;
-      color: #b8872c;
-      font-size: 17px;
-      font-style: italic;
-    }
-
-    /* PROCESS */
-
-    .process {
-      background: #FFFCF7;
-      color: #111111;
-      padding: 110px 30px;
-    }
-
-    .process-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .process h2 {
-      max-width: 850px;
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 5vw, 58px);
-      font-weight: normal;
-      line-height: 1.1;
-      margin-bottom: 70px;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-
-    .process-step {
-      border-top: 1px solid #d9d9d9;
-      padding-top: 28px;
-    }
-
-    .step-number {
-      display: block;
-      color: #a97816;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 22px;
-    }
-
-    .process-step h3 {
-      font-family: Georgia, serif;
-      font-size: 27px;
-      font-weight: normal;
-      margin-bottom: 18px;
-    }
-
-    .process-step p {
-      color: #555555;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .process-closing {
-      margin-top: 80px;
-      padding-top: 35px;
-      border-top: 1px solid #d9d9d9;
-      font-family: Georgia, serif;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.2;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #111111;
-      color: #ffffff;
-      padding: 110px 30px;
-      text-align: center;
-    }
-
-    .contact-container {
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .contact h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(34px, 5vw, 50px);
-      font-weight: normal;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      color: #cccccc;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .contact .button {
-      background: #ffffff;
-      color: #111111;
-      border-radius: 6px;
-      font-size: 18px;
-      padding: 20px 40px;
-    }
-
-    .contact .button:hover {
-      background: #a97816;
-      color: #ffffff;
-    }
-
-    /* SECTION DIVIDER (logo flourish motif) */
-
-    .section-divider {
-      display: flex;
-      justify-content: center;
-      padding: 46px 30px;
-    }
-
-    .section-divider svg {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-    }
-
-    /* FOOTER */
-
-    .site-footer {
-      background: #111111;
-      color: #8f8f8f;
-      text-align: center;
-      padding: 28px 30px;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      border-top: 1px solid #262626;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        gap: 24px;
-        padding: 24px;
-      }
-
-      .brand-text {
-        font-size: 36px;
-        letter-spacing: 3px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .nav-links a {
-        font-size: 16px;
-        padding: 10px 18px;
-      }
-
-      .services {
-        padding: 80px 24px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        min-height: auto;
-        padding: 32px 24px;
-      }
-
-      .services h2 {
-        font-size: 40px;
-      }
-
-      .hero {
-        min-height: 75vh;
-        padding: 60px 24px;
-      }
-
-      h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .process {
-        padding: 80px 24px;
-      }
-
-      .process-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .process h2 {
-        font-size: 40px;
-        margin-bottom: 50px;
-      }
-
-      .process-closing {
-        margin-top: 60px;
-        font-size: 30px;
-      }
-
-      .contact {
-        padding: 80px 24px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <nav>
-    <div class="brand">
-      <svg class="flourish" viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-        <g stroke="#B58A32" stroke-width="1.4" stroke-linecap="round">
-          <path d="M14 11 C 48 11, 80 11, 101 11"/>
-          <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
-          <path d="M226 11 C 192 11, 160 11, 139 11"/>
-          <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
-        </g>
-        <circle cx="14" cy="11" r="2.2" fill="#B58A32"/>
-        <circle cx="226" cy="11" r="2.2" fill="#B58A32"/>
-        <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#B58A32"/>
-        <circle cx="120" cy="11" r="1.4" fill="#FFFCF7"/>
-      </svg>
+  <div class="nav-wrap" id="navWrap">
+    <nav>
+      <a class="brand" href="index.html" aria-label="Clarity Press Solutions home" style="text-decoration:none">
+        <svg class="flourish" viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+          <g stroke="#E8C878" stroke-width="1.4" stroke-linecap="round">
+            <path d="M14 11 C 48 11, 80 11, 101 11"/>
+            <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
+            <path d="M226 11 C 192 11, 160 11, 139 11"/>
+            <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
+          </g>
+          <circle cx="14" cy="11" r="2.2" fill="#E8C878"/>
+          <circle cx="226" cy="11" r="2.2" fill="#E8C878"/>
+          <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#E8C878"/>
+          <circle cx="120" cy="11" r="1.4" fill="#0d0d0f"/>
+        </svg>
+        <span class="brand-text">CLARITY PRESS</span>
+        <svg class="flourish flourish-bottom" viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+          <g stroke="#E8C878" stroke-width="1.4" stroke-linecap="round">
+            <path d="M14 11 C 48 11, 80 11, 101 11"/>
+            <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
+            <path d="M226 11 C 192 11, 160 11, 139 11"/>
+            <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
+          </g>
+          <circle cx="14" cy="11" r="2.2" fill="#E8C878"/>
+          <circle cx="226" cy="11" r="2.2" fill="#E8C878"/>
+          <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#E8C878"/>
+          <circle cx="120" cy="11" r="1.4" fill="#0d0d0f"/>
+        </svg>
+      </a>
 
-      <span class="brand-text">CLARITY PRESS</span>
-
-      <svg class="flourish flourish-bottom" viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-        <g stroke="#B58A32" stroke-width="1.4" stroke-linecap="round">
-          <path d="M14 11 C 48 11, 80 11, 101 11"/>
-          <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
-          <path d="M226 11 C 192 11, 160 11, 139 11"/>
-          <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
-        </g>
-        <circle cx="14" cy="11" r="2.2" fill="#B58A32"/>
-        <circle cx="226" cy="11" r="2.2" fill="#B58A32"/>
-        <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#B58A32"/>
-        <circle cx="120" cy="11" r="1.4" fill="#FFFCF7"/>
-      </svg>
-    </div>
-
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#process">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
 
   <main>
 
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
 
-      <div class="hero-content">
+      <div class="hero-inner">
 
-        <div class="eyebrow">
-          BUSINESS SYSTEMS &amp; SOLUTIONS
+        <div class="hero-text reveal">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            BUSINESS SYSTEMS &amp; SOLUTIONS
+          </div>
+
+          <h1>
+            Better systems.<br>
+            <span class="grad-text">Better business.</span>
+          </h1>
+
+          <p>
+            We help small businesses simplify the way they work with professional
+            websites, lead capture, CRM organization, follow-up, booking systems,
+            automation, and practical consulting.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="contact.html">LET'S TALK</a>
+            <a class="button ghost" href="work.html">SEE OUR WORK</a>
+          </div>
         </div>
 
-        <h1>
-          Better systems.<br>
-          Better business.
-        </h1>
-
-        <p>
-          We help businesses simplify the way they work with professional
-          websites, lead management, customer follow-up, CRM organization,
-          booking systems, automation, and practical business solutions.
-        </p>
-
-        <a class="button" href="#contact">
-          LET'S TALK
-        </a>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#E8C878"/>
+                <stop offset="100%" stop-color="#8a6420"/>
+              </linearGradient>
+              <radialGradient id="coreGrad">
+                <stop offset="0%" stop-color="#F6E7BE"/>
+                <stop offset="100%" stop-color="#B58A32"/>
+              </radialGradient>
+            </defs>
+            <g class="hv-lines">
+              <line class="hv-line" x1="200" y1="200" x2="90" y2="80"/>
+              <line class="hv-line" x1="200" y1="200" x2="320" y2="95"/>
+              <line class="hv-line" x1="200" y1="200" x2="340" y2="250"/>
+              <line class="hv-line" x1="200" y1="200" x2="230" y2="340"/>
+              <line class="hv-line" x1="200" y1="200" x2="70" y2="290"/>
+              <line class="hv-line" x1="200" y1="200" x2="60" y2="180"/>
+              <line class="hv-line" x1="90" y1="80" x2="320" y2="95"/>
+              <line class="hv-line" x1="70" y1="290" x2="230" y2="340"/>
+            </g>
+            <g>
+              <circle class="hv-node" cx="90" cy="80" r="15"/>
+              <circle class="hv-node" cx="320" cy="95" r="13"/>
+              <circle class="hv-node" cx="340" cy="250" r="14"/>
+              <circle class="hv-node" cx="230" cy="340" r="12"/>
+              <circle class="hv-node" cx="70" cy="290" r="14"/>
+              <circle class="hv-node" cx="60" cy="180" r="11"/>
+            </g>
+            <g>
+              <circle class="hv-pulse" cx="90" cy="80" r="4"/>
+              <circle class="hv-pulse" cx="320" cy="95" r="4"/>
+              <circle class="hv-pulse" cx="340" cy="250" r="4"/>
+              <circle class="hv-pulse" cx="230" cy="340" r="4"/>
+              <circle class="hv-pulse" cx="70" cy="290" r="4"/>
+              <circle class="hv-pulse" cx="60" cy="180" r="4"/>
+            </g>
+            <circle class="hv-node-core" cx="200" cy="200" r="26"/>
+            <circle cx="200" cy="200" r="26" fill="none" stroke="#F6E7BE" stroke-width="1" opacity="0.6"/>
+          </svg>
+        </div>
 
       </div>
-
     </section>
-
-    <div class="section-divider" aria-hidden="true">
-      <svg viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="#B58A32" stroke-width="1.4" stroke-linecap="round">
-          <path d="M14 11 C 48 11, 80 11, 101 11"/>
-          <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
-          <path d="M226 11 C 192 11, 160 11, 139 11"/>
-          <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
-        </g>
-        <circle cx="14" cy="11" r="2.2" fill="#B58A32"/>
-        <circle cx="226" cy="11" r="2.2" fill="#B58A32"/>
-        <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#B58A32"/>
-        <circle cx="120" cy="11" r="1.4" fill="#FFFCF7"/>
-      </svg>
-    </div>
 
     <section class="services" id="services">
-
       <div class="services-container">
 
-        <div class="section-label">
-          WHAT WE DO
-        </div>
-
-        <h2>
-          Solutions built around the way your business works.
-        </h2>
-
-        <p class="services-intro">
+        <div class="section-label reveal">WHAT WE DO</div>
+        <h2 class="reveal">Solutions built around the way your business works.</h2>
+        <p class="services-intro reveal">
           We help businesses create simpler, more connected ways to attract
-          customers, manage leads, stay organized, and follow up.
+          customers, manage leads, stay organized, and follow up. Tap any card
+          to see how it helps.
         </p>
 
-        <div class="services-grid">
+        <div class="services-grid stagger">
 
-          <div class="service-card">
-            <h3>Website Design &amp; Development</h3>
-            <p>
-              Professional websites built to turn visitors into opportunities.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="6" y="9" width="30" height="24" rx="2.5"/><line x1="6" y1="16" x2="36" y2="16"/><circle cx="10" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/><circle cx="13.5" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/><path d="M15 22 l-3 3 l3 3"/><path d="M27 22 l3 3 l-3 3"/>
+                  </svg>
+                </span>
+                <h3>Website Design &amp; Development</h3>
+                <p>Professional websites built to turn visitors into opportunities.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Trust</span>
+                <p>A polished, professional site builds instant credibility &mdash; visitors decide whether to trust you in seconds, before they read a single word.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <h3>Lead Capture Systems</h3>
-            <p>
-              Simple ways to collect, organize, and respond to new leads.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9 H34 L25 21 V32 L17 27 V21 Z"/></svg>
+                </span>
+                <h3>Lead Capture Systems</h3>
+                <p>Simple ways to collect, organize, and respond to new leads.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Speed</span>
+                <p>The faster you respond, the more leads you win. Capture systems make sure every inquiry is caught and answered quickly &mdash; not lost in an inbox.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <h3>CRM Setup &amp; Organization</h3>
-            <p>
-              Keep leads, customers, conversations, and opportunities organized.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="15" r="4.5"/><path d="M8.5 31 c0 -5 3.5 -7.5 7.5 -7.5 s7.5 2.5 7.5 7.5"/><circle cx="29" cy="17" r="3.5"/><path d="M26 31 c0 -4 1.5 -7 6 -7 s5 3 5 6"/></svg>
+                </span>
+                <h3>CRM Setup &amp; Organization</h3>
+                <p>Keep leads, customers, conversations, and opportunities organized.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Clarity</span>
+                <p>See every customer, conversation, and opportunity in one place &mdash; so nothing slips through the cracks and follow-through becomes effortless.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <h3>Customer Follow-Up</h3>
-            <p>
-              Create consistent follow-up so potential customers don't get forgotten.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 11 h26 a2 2 0 0 1 2 2 v13 a2 2 0 0 1 -2 2 H19 l-6 5 v-5 H8 a2 2 0 0 1 -2 -2 V13 a2 2 0 0 1 2 -2 z"/><circle cx="15" cy="19.5" r="1" fill="#B58A32" stroke="none"/><circle cx="21" cy="19.5" r="1" fill="#B58A32" stroke="none"/><circle cx="27" cy="19.5" r="1" fill="#B58A32" stroke="none"/></svg>
+                </span>
+                <h3>Customer Follow-Up</h3>
+                <p>Create consistent follow-up so potential customers don't get forgotten.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Persistence</span>
+                <p>Most sales are lost to silence, not rejection. Steady, timely follow-up keeps you top of mind and turns maybes into yeses.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <h3>Booking &amp; Automation</h3>
-            <p>
-              Simplify scheduling and repetitive tasks that take up your time.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="10" width="28" height="25" rx="2.5"/><line x1="7" y1="17" x2="35" y2="17"/><line x1="14" y1="7" x2="14" y2="13"/><line x1="28" y1="7" x2="28" y2="13"/><path d="M15 25 l4 4 l8 -8"/></svg>
+                </span>
+                <h3>Booking &amp; Automation</h3>
+                <p>Simplify scheduling and repetitive tasks that take up your time.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Time back</span>
+                <p>Let customers book themselves and let routine tasks run on autopilot &mdash; reclaiming hours every week and cutting down on no-shows.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
-          <div class="service-card">
-            <h3>Business Consulting</h3>
-            <p>
-              Practical guidance to identify what's slowing your business down
-              and what systems could improve it.
-            </p>
-          </div>
+          <button class="flip-card" type="button" aria-pressed="false">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <span class="icon-chip">
+                  <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7 a10 10 0 0 1 6 18 c-1 0.8 -1.5 1.8 -1.5 3 h-9 c0 -1.2 -0.5 -2.2 -1.5 -3 a10 10 0 0 1 6 -18 z"/><line x1="16.5" y1="32" x2="25.5" y2="32"/><line x1="18" y1="35.5" x2="24" y2="35.5"/></svg>
+                </span>
+                <h3>Business Consulting</h3>
+                <p>Practical guidance to identify what's slowing your business down and what systems could improve it.</p>
+                <span class="flip-cue">SEE HOW IT HELPS &rarr;</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="stat-figure">Fresh eyes</span>
+                <p>An outside perspective spots the bottlenecks you're too close to see &mdash; and turns them into a clear, practical plan you can act on.</p>
+                <span class="flip-cue">&larr; BACK</span>
+              </div>
+            </div>
+          </button>
 
         </div>
 
-        <p class="services-note">
-          Not sure what you need? That's okay. We'll figure it out together.
+        <p class="services-note reveal">
+          You don't need to have it figured out. That's our job &mdash;
+          <a href="services.html" style="color:inherit">see how we work &rarr;</a>
         </p>
 
       </div>
-
     </section>
 
-    <div class="section-divider" aria-hidden="true">
-      <svg viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="#B58A32" stroke-width="1.4" stroke-linecap="round">
-          <path d="M14 11 C 48 11, 80 11, 101 11"/>
-          <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
-          <path d="M226 11 C 192 11, 160 11, 139 11"/>
-          <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
-        </g>
-        <circle cx="14" cy="11" r="2.2" fill="#B58A32"/>
-        <circle cx="226" cy="11" r="2.2" fill="#B58A32"/>
-        <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#B58A32"/>
-        <circle cx="120" cy="11" r="1.4" fill="#F7F3EA"/>
-      </svg>
-    </div>
-
-    <section class="process" id="process">
-
-      <div class="process-container">
-
-        <div class="section-label">
-          HOW WE WORK WITH YOU
-        </div>
-
-        <h2>
-          No complicated process. Just figuring out what your business actually needs.
-        </h2>
-
-        <div class="process-grid">
-
-          <div class="process-step">
-            <span class="step-number">01</span>
-            <h3>We talk about your business</h3>
-            <p>
-              We want to understand what feels messy, what takes too much time,
-              what gets missed, and what you wish worked better.
-            </p>
+    <section class="trust">
+      <div class="trust-container">
+        <div class="section-label reveal">WHY WORK WITH US</div>
+        <h2 class="reveal">Straightforward help, built around you.</h2>
+        <div class="trust-grid stagger">
+          <div class="trust-item">
+            <span class="trust-icon-chip">
+              <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#E8C878" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5 H8 a3 3 0 0 0 -3 3 v13 l16 16 a2.5 2.5 0 0 0 3.5 0 l10 -10 a2.5 2.5 0 0 0 0 -3.5 z"/><circle cx="12.5" cy="12.5" r="2"/></svg>
+            </span>
+            <h3>Fair, upfront pricing</h3>
+            <p>You'll know the cost before we start &mdash; no surprise fees or hidden add-ons.</p>
           </div>
-
-          <div class="process-step">
-            <span class="step-number">02</span>
-            <h3>We find a solution that makes sense</h3>
-            <p>
-              No selling you things you do not need. We figure out what would
-              actually make running your business easier.
-            </p>
+          <div class="trust-item">
+            <span class="trust-icon-chip">
+              <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#E8C878" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="15" r="6"/><path d="M9 34 c0 -7 5 -11 12 -11 s12 4 12 11"/></svg>
+            </span>
+            <h3>Personal service</h3>
+            <p>You work directly with us from first conversation to finished system &mdash; no handoffs, no call centers.</p>
           </div>
-
-          <div class="process-step">
-            <span class="step-number">03</span>
-            <h3>Then we build it</h3>
-            <p>
-              Whether that is a website, CRM, booking system, follow-up process,
-              automation, or a combination, the goal is to create something useful
-              and easy to manage.
-            </p>
+          <div class="trust-item">
+            <span class="trust-icon-chip">
+              <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#E8C878" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="15"/><path d="M21 12 v9 l6 4"/></svg>
+            </span>
+            <h3>Built to save you time</h3>
+            <p>Every system we set up is designed to cut busywork so you can focus on running your business.</p>
           </div>
-
         </div>
-
-        <div class="process-closing">
-          Less busywork. More time to actually run your business.
-        </div>
-
       </div>
-
     </section>
 
-    <div class="section-divider" aria-hidden="true">
-      <svg viewBox="0 -3 240 28" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <g stroke="#B58A32" stroke-width="1.4" stroke-linecap="round">
-          <path d="M14 11 C 48 11, 80 11, 101 11"/>
-          <path d="M101 11 c 11 0, 15 -7, 8 -11 c -5 -3, -11 2, -6 8"/>
-          <path d="M226 11 C 192 11, 160 11, 139 11"/>
-          <path d="M139 11 c -11 0, -15 -7, -8 -11 c 5 -3, 11 2, 6 8"/>
-        </g>
-        <circle cx="14" cy="11" r="2.2" fill="#B58A32"/>
-        <circle cx="226" cy="11" r="2.2" fill="#B58A32"/>
-        <path d="M120 3 L 125 11 L 120 19 L 115 11 Z" fill="#B58A32"/>
-        <circle cx="120" cy="11" r="1.4" fill="#FFFCF7"/>
-      </svg>
-    </div>
-
-    <section class="contact" id="contact">
-
-      <div class="contact-container">
-
-        <h2>Let's talk about your business.</h2>
-
-        <p>
-          Tell us what's slowing you down, and we'll figure out the right
-          system to fix it.
-        </p>
-
-        <a class="button" href="mailto:taylor_lewis906@hotmail.com">
-          GET IN TOUCH
-        </a>
-
+    <section class="cta-band">
+      <div class="cta-band-inner reveal">
+        <h2>Ready to make your business easier to run?</h2>
+        <p>Whatever's costing you time, there's usually a simpler way. Let's find yours.</p>
+        <a class="button" href="contact.html">GET IN TOUCH</a>
       </div>
-
     </section>
 
   </main>
@@ -687,6 +310,8 @@
   <footer class="site-footer">
     <p>&copy; 2026 Clarity Press Solutions &mdash; Business Systems &amp; Solutions. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
