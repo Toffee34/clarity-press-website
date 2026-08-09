@@ -194,6 +194,13 @@
       background: #F1E8D5;
     }
 
+    .service-icon {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 20px;
+    }
+
     .service-card h3 {
       font-family: Georgia, serif;
       font-size: 25px;
@@ -247,13 +254,25 @@
       padding-top: 28px;
     }
 
+    .step-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
     .step-number {
       display: block;
       color: #a97816;
       font-size: 13px;
       font-weight: bold;
       letter-spacing: 2px;
-      margin-bottom: 22px;
+    }
+
+    .step-icon {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
     }
 
     .process-step h3 {
@@ -330,6 +349,58 @@
       width: 100%;
       max-width: 300px;
       height: auto;
+    }
+
+    /* TRUST */
+
+    .trust {
+      background: #F7F3EA;
+      color: #181818;
+      padding: 90px 30px;
+      border-top: 1px solid #DCCCA7;
+    }
+
+    .trust-container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .trust h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: normal;
+      margin-bottom: 55px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 45px;
+      text-align: left;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .trust-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .trust-item h3 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .trust-item p {
+      color: #625E57;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     /* FOOTER */
@@ -420,6 +491,15 @@
 
       .contact {
         padding: 80px 24px;
+      }
+
+      .trust {
+        padding: 70px 24px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
   </style>
@@ -529,6 +609,14 @@
         <div class="services-grid">
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="9" width="30" height="24" rx="2.5"/>
+              <line x1="6" y1="16" x2="36" y2="16"/>
+              <circle cx="10" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
+              <circle cx="13.5" cy="12.5" r="0.9" fill="#B58A32" stroke="none"/>
+              <path d="M15 22 l-3 3 l3 3"/>
+              <path d="M27 22 l3 3 l-3 3"/>
+            </svg>
             <h3>Website Design &amp; Development</h3>
             <p>
               Professional websites built to turn visitors into opportunities.
@@ -536,6 +624,9 @@
           </div>
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 9 H34 L25 21 V32 L17 27 V21 Z"/>
+            </svg>
             <h3>Lead Capture Systems</h3>
             <p>
               Simple ways to collect, organize, and respond to new leads.
@@ -543,6 +634,12 @@
           </div>
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="16" cy="15" r="4.5"/>
+              <path d="M8.5 31 c0 -5 3.5 -7.5 7.5 -7.5 s7.5 2.5 7.5 7.5"/>
+              <circle cx="29" cy="17" r="3.5"/>
+              <path d="M26 31 c0 -4 1.5 -7 6 -7 s5 3 5 6"/>
+            </svg>
             <h3>CRM Setup &amp; Organization</h3>
             <p>
               Keep leads, customers, conversations, and opportunities organized.
@@ -550,6 +647,12 @@
           </div>
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 11 h26 a2 2 0 0 1 2 2 v13 a2 2 0 0 1 -2 2 H19 l-6 5 v-5 H8 a2 2 0 0 1 -2 -2 V13 a2 2 0 0 1 2 -2 z"/>
+              <circle cx="15" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+              <circle cx="21" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+              <circle cx="27" cy="19.5" r="1" fill="#B58A32" stroke="none"/>
+            </svg>
             <h3>Customer Follow-Up</h3>
             <p>
               Create consistent follow-up so potential customers don't get forgotten.
@@ -557,6 +660,13 @@
           </div>
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="7" y="10" width="28" height="25" rx="2.5"/>
+              <line x1="7" y1="17" x2="35" y2="17"/>
+              <line x1="14" y1="7" x2="14" y2="13"/>
+              <line x1="28" y1="7" x2="28" y2="13"/>
+              <path d="M15 25 l4 4 l8 -8"/>
+            </svg>
             <h3>Booking &amp; Automation</h3>
             <p>
               Simplify scheduling and repetitive tasks that take up your time.
@@ -564,6 +674,11 @@
           </div>
 
           <div class="service-card">
+            <svg class="service-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 7 a10 10 0 0 1 6 18 c-1 0.8 -1.5 1.8 -1.5 3 h-9 c0 -1.2 -0.5 -2.2 -1.5 -3 a10 10 0 0 1 6 -18 z"/>
+              <line x1="16.5" y1="32" x2="25.5" y2="32"/>
+              <line x1="18" y1="35.5" x2="24" y2="35.5"/>
+            </svg>
             <h3>Business Consulting</h3>
             <p>
               Practical guidance to identify what's slowing your business down
@@ -611,7 +726,13 @@
         <div class="process-grid">
 
           <div class="process-step">
-            <span class="step-number">01</span>
+            <div class="step-head">
+              <svg class="step-icon" viewBox="0 0 30 30" fill="none" stroke="#a97816" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 7 h15 a2 2 0 0 1 2 2 v7 a2 2 0 0 1 -2 2 H11 l-4 3 v-3 H4 a2 2 0 0 1 -2 -2 V9 a2 2 0 0 1 2 -2 z"/>
+                <path d="M23 12 h3 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-1 v3 l-4 -3 h-4"/>
+              </svg>
+              <span class="step-number">01</span>
+            </div>
             <h3>We talk about your business</h3>
             <p>
               We want to understand what feels messy, what takes too much time,
@@ -620,7 +741,14 @@
           </div>
 
           <div class="process-step">
-            <span class="step-number">02</span>
+            <div class="step-head">
+              <svg class="step-icon" viewBox="0 0 30 30" fill="none" stroke="#a97816" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="13" cy="13" r="8"/>
+                <line x1="19" y1="19" x2="26" y2="26"/>
+                <path d="M9.5 13 l2.5 2.5 l5 -5.5"/>
+              </svg>
+              <span class="step-number">02</span>
+            </div>
             <h3>We find a solution that makes sense</h3>
             <p>
               No selling you things you do not need. We figure out what would
@@ -629,7 +757,12 @@
           </div>
 
           <div class="process-step">
-            <span class="step-number">03</span>
+            <div class="step-head">
+              <svg class="step-icon" viewBox="0 0 30 30" fill="none" stroke="#a97816" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 7 a5 5 0 0 0 -6.5 6.5 l-7 7 a2 2 0 0 0 0 3 l1 1 a2 2 0 0 0 3 0 l7 -7 A5 5 0 0 0 23 15 l-4 -1 -2 -2 z"/>
+              </svg>
+              <span class="step-number">03</span>
+            </div>
             <h3>Then we build it</h3>
             <p>
               Whether that is a website, CRM, booking system, follow-up process,
@@ -662,6 +795,56 @@
         <circle cx="120" cy="11" r="1.4" fill="#FFFCF7"/>
       </svg>
     </div>
+
+    <section class="trust">
+
+      <div class="trust-container">
+
+        <h2>Straightforward help, built around you.</h2>
+
+        <div class="trust-grid">
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 5 l4 4 h6 v6 l4 4 -4 4 v6 h-6 l-4 4 -4 -4 h-6 v-6 l-4 -4 4 -4 V9 h6 z"/>
+              <path d="M15 21 l4 4 l9 -9"/>
+            </svg>
+            <h3>No jargon, ever</h3>
+            <p>
+              We explain things in plain language and only build what
+              actually helps your business.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="21" cy="15" r="6"/>
+              <path d="M9 34 c0 -7 5 -11 12 -11 s12 4 12 11"/>
+            </svg>
+            <h3>Personal service</h3>
+            <p>
+              You work directly with us from first conversation to
+              finished system &mdash; no handoffs, no call centers.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 42 42" fill="none" stroke="#B58A32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="21" cy="21" r="15"/>
+              <path d="M21 12 v9 l6 4"/>
+            </svg>
+            <h3>Built to save you time</h3>
+            <p>
+              Every system we set up is designed to cut busywork so you
+              can focus on running your business.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
     <section class="contact" id="contact">
 
