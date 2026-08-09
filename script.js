@@ -51,23 +51,59 @@
     });
   });
 
-  // Contact form -> mailto (static-site friendly; upgrade to Formspree later)
+  // Contact form -> Formspree (AJAX, no page reload)
   var form = document.getElementById('contactForm');
   if (form) {
+    var status = document.getElementById('cf-status');
+    var submit = document.getElementById('cf-submit');
+    var endpoint = form.getAttribute('data-endpoint') || '';
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = (form.name.value || '').trim();
-      var email = (form.email.value || '').trim();
-      var business = (form.business.value || '').trim();
-      var message = (form.message.value || '').trim();
-      var subject = encodeURIComponent('New inquiry from ' + (name || 'website'));
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Business: ' + business + '\n\n' +
-        message
-      );
-      window.location.href = 'mailto:taylor_lewis906@hotmail.com?subject=' + subject + '&body=' + body;
+
+      // Basic required-field check
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // If the endpoint hasn't been configured yet, fall back to email so nothing breaks.
+      if (endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+        var subj = encodeURIComponent('New inquiry from ' + (form.name.value || 'website'));
+        var body = encodeURIComponent(
+          'Name: ' + form.name.value + '\nEmail: ' + form.email.value +
+          '\nBusiness: ' + form.business.value + '\n\n' + form.message.value
+        );
+        window.location.href = 'mailto:taylor_lewis906@hotmail.com?subject=' + subj + '&body=' + body;
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = 'SENDING…';
+      status.textContent = '';
+      status.style.color = '';
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          status.style.color = '#1f7a3d';
+          status.textContent = 'Thanks! Your message has been sent — we\'ll reply within a day.';
+          submit.textContent = 'MESSAGE SENT ✓';
+        } else {
+          return res.json().then(function (data) {
+            throw new Error((data && data.errors && data.errors[0] && data.errors[0].message) || 'Something went wrong.');
+          });
+        }
+      }).catch(function (err) {
+        status.style.color = '#b23c3c';
+        status.textContent = 'Sorry — that didn\'t send. Please email taylor_lewis906@hotmail.com directly.';
+        submit.disabled = false;
+        submit.textContent = 'SEND MESSAGE';
+      });
     });
   }
 })();
