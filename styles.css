@@ -1313,8 +1313,6 @@
   box-shadow: 0 0 0 3px rgba(181,138,50,0.15);
 }
 .field textarea { resize: vertical; min-height: 150px; }
-.form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-
 .form-card .button { width: 100%; text-align: center; border: none; cursor: pointer; font-family: inherit; }
 
 .form-hint { font-size: 13px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
