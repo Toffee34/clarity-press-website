@@ -74,7 +74,7 @@
           'Name: ' + form.name.value + '\nEmail: ' + form.email.value +
           '\nBusiness: ' + form.business.value + '\n\n' + form.message.value
         );
-        window.location.href = 'mailto:taylor_lewis906@hotmail.com?subject=' + subj + '&body=' + body;
+        window.location.href = 'mailto:TaylorLewis@claritypresssolutions.com?subject=' + subj + '&body=' + body;
         return;
       }
 
@@ -100,7 +100,7 @@
         }
       }).catch(function (err) {
         status.style.color = '#b23c3c';
-        status.textContent = 'Sorry — that didn\'t send. Please email taylor_lewis906@hotmail.com directly.';
+        status.textContent = 'Sorry — that didn\'t send. Please email TaylorLewis@claritypresssolutions.com directly.';
         submit.disabled = false;
         submit.textContent = 'SEND MESSAGE';
       });
