@@ -1175,15 +1175,6 @@
 
 .pricing-best-for strong { color: var(--ink); }
 
-.pricing-card .button {
-  display: block;
-  width: 100%;
-  margin-top: 24px;
-  padding-left: 18px;
-  padding-right: 18px;
-  text-align: center;
-}
-
 .addons {
   margin-top: 70px;
   background: #fff;
